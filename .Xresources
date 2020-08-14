@@ -1,0 +1,37 @@
+!   Rofi
+rofi.color-enabled: true
+rofi.color-window: argb:e81d1d26, #002b36, #000000
+rofi.color-normal: argb:b0000000, #535172, argb:10000000, argb:10000000, #eee8d5
+rofi.color-active: argb:d5fdf6e3, #268bd2, #eee8d5, #268bd2, #fdf6e3
+rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
+
+export PATH="${PATH}:${HOME}/.local/bin/"
+
+!   URxvt
+URxvt*scrollBar: false
+URxvt*internalBorder: 10
+URxvt*letterSpace: -1
+URxvt*font: xft:Ubuntu Mono:size=8
+URxvt*fontBold: xft:Ubuntu Mono:bold:size=8
+
+!   Polybar
+[colors]
+background = ${xrdb:color1:#000}
+background-alt = ${xrdb:color2:#444}
+foreground = ${xrdb:color7:#101010}
+foreground-alt = ${xrdb:color6:#555}
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/default]
+; ...
+!   background = ${colors.background}
+!   foreground = ${colors.foreground}
+width = 100%
+height = 14
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = false
+; ...
