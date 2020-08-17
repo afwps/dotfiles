@@ -11,8 +11,8 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 URxvt*scrollBar: false
 URxvt*internalBorder: 10
 URxvt*letterSpace: -1
-URxvt*font: xft:Ubuntu Mono:size=8
-URxvt*fontBold: xft:Ubuntu Mono:bold:size=8
+URxvt*font: xft:MesloLGS NF:size=8
+URxvt*fontBold: xft:MesloLGS NF:bold:size=8
 
 !   Polybar
 [colors]

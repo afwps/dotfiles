@@ -1,29 +1,13 @@
 # To change your keyboard layout, delete this file and re-run i3-config-wizard(1).
-
-# i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:monospace 8
+# Font for window titles/bar(default)
+font pango:MesloLGS NF 8
+# Font
+font pango:MesloLGS NF 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# i3lock
 bindsym $mod+shift+x exec i3lock --color "#101010"
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -32,18 +16,31 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+# toggle touchpad
+# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -53,7 +50,7 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher alternative)
 # rofi can also display either commands or applications shipping a .desktop file.
 # github.com/davatorium/rofi for more informations
-bindsym $mod+d exec rofi -show run
+# bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+j focus left
@@ -142,6 +139,14 @@ bindsym $mod+Shift+underscore move container to workspace number $ws8
 bindsym $mod+Shift+ccedilla move container to workspace number $ws9
 bindsym $mod+Shift+agrave move container to workspace number $ws10
 
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="galculator"] floating enable border pixel 1
+for_window [class="gparted"] floating enable border normal
+for_window [class="lxappearance"] floating enable sticky enable border normal
+for_window [class="nitrogen"] floating enable floating enable sticky enable border normal
+for_window [class="pavucontrol"] floating enable
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -188,23 +193,37 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
-# Gaps
-gaps inner 15
-gaps outer 10
+# bar
+bar {
+ 	status_command i3blocks
+ 	position top
+	height 20
+	colors {
+	background #000000
+	statusline #ffffff
+	separator #ffffff
+	}
+}
+
+# gaps
+gaps inner 8
+gaps outer -2
 # Remove titlebars
 for_window [class=".*"] border pixel 0
 for_window [class=".*"] title_format "  %title"
 # smart_gaps on
-# smart_border on
+# mart_border on
 
-# Polybar
-exec_always --no-startup-id "killall polybar; polybar -r default"
-
-# Feh
-exec --no-startup-id feh --bg-scale Images/wallpapers/269.png
-
-# Compton
+# polybar
+# exec_always --no-startup-id "killall polybar; polybar -r default"
+# feh
+exec --no-startup-id feh --bg-scale Images/wallpapers/129.jpg
+# pywal
+exec --no-startup-id wal -i /home/afwps/Images/wallpapers/129.jpg
+# compton
 exec --no-startup-id compton
-
-# Pywal
-exec --no-startup-id wal -i /home/afwps/Images/wallpapers/269.png
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# network manager
+exec --no-startup-id nm-applet
