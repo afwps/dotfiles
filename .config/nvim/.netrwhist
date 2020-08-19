@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/afwps/lab/workspaces/node/geol/modules'
+let g:netrw_dirhist_2='/home/afwps/lab/workspaces/node/geol/routes'
+let g:netrw_dirhist_1='/home/afwps/lab/workspaces/node/geol'
