@@ -195,7 +195,7 @@ client.background       #ffffff
 
 # bar
 bar {
- 	status_command i3blocks
+        status_command i3blocks
  	position top
 	height 20
 	colors {
@@ -206,7 +206,7 @@ bar {
 }
 
 # gaps
-gaps inner 8
+gaps inner 12
 gaps outer -2
 # Remove titlebars
 for_window [class=".*"] border pixel 0
@@ -217,9 +217,9 @@ for_window [class=".*"] title_format "  %title"
 # polybar
 # exec_always --no-startup-id "killall polybar; polybar -r default"
 # feh
-exec --no-startup-id feh --bg-scale Images/wallpapers/129.jpg
+exec --no-startup-id feh --bg-scale Images/wallpapers/144.jpg
 # pywal
-exec --no-startup-id wal -i /home/afwps/Images/wallpapers/129.jpg
+exec --no-startup-id wal -i /home/afwps/Images/wallpapers/144.jpg
 # compton
 exec --no-startup-id compton
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
