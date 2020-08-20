@@ -15,6 +15,9 @@ Plug 'jreybert/vimagit'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -27,12 +30,12 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
 Plug 'vifm/vifm.vim'
-
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 syntax on
 
-set encoding=utf-8
+set encoding=UTF-8
 set noerrorbells
 set expandtab
 set smartindent
@@ -50,3 +53,26 @@ if executable ('rg')
 endif
 
 colorscheme wal
+
+map <F2> : NERDTreeToggle<CR>
+
+let g:airline_theme = 'deus'
+let g:plug_window = 'noautocmd vertical topleft new'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code
+" indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+" let g:NERDAltDelims_<language> = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**', 'right': '*/' } }
+" Allow commenting and inverting empty lines
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check if all selected lines are commented or
+" not
+let g:NERDToggleCheckAllLines = 1
