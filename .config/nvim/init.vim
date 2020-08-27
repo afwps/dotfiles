@@ -1,24 +1,25 @@
 call plug#begin('~/local/share/nvim/plugged')
 
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'raimondi/delimitmate'
+Plug 'yggdroot/indentline'
 Plug 'dylanaraps/wal.vim'
-Plug 'tomasiser/vim-code-dark'
 Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'
 Plug 'gmarik/Vundle.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'leafgarland/typescript-vim'
-Plug 'tiagofumu/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-python/python-syntax'
 Plug 'jreybert/vimagit'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
+Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mbbill/undotree'
+Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -56,7 +57,7 @@ colorscheme wal
 
 map <F2> : NERDTreeToggle<CR>
 
-let g:airline_theme = 'deus'
+let g:airline_theme = 'bubblegum'
 let g:plug_window = 'noautocmd vertical topleft new'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -76,3 +77,10 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check if all selected lines are commented or
 " not
 let g:NERDToggleCheckAllLines = 1
+" Width
+"Goyo 120
+" Height
+"Goyo x30
+"g:goyo_width
+"g:goyo_height
+"g:goyo_linenr

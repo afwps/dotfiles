@@ -217,9 +217,9 @@ for_window [class=".*"] title_format "  %title"
 # polybar
 # exec_always --no-startup-id "killall polybar; polybar -r default"
 # feh
-exec --no-startup-id feh --bg-scale Images/wallpapers/144.jpg
+exec --no-startup-id feh --bg-scale Images/wallpapers/1.jpg
 # pywal
-exec --no-startup-id wal -i /home/afwps/Images/wallpapers/144.jpg
+exec --no-startup-id wal -i /home/afwps/Images/wallpapers/1.jpg
 # compton
 exec --no-startup-id compton
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
